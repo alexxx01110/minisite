@@ -1,0 +1,202 @@
+.features__title {
+  padding: 0;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  font-size: 35px;
+  line-height: 35px;
+  @include tracking(-25);
+  text-align: center;
+  color: $color-primary;
+
+  background-color: $bg-light;
+}
+.features__list {
+  margin: 0;
+  padding: 0;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  padding-left: 14px;
+  padding-right: 14px;
+
+  list-style: none;
+  color: $color-light;
+
+  font-size: 24px;
+  line-height: 30px;
+
+  background-color: $bg-transparent-dark;
+}
+.features__item {
+  position: relative;
+  padding-right: 26px;
+  &:before {
+    position: absolute;
+    content: "";
+
+    top: 13px;
+    left: calc(100% - 15px);
+
+    width: 8px;
+    height: 8px;
+
+    background-color: $bg-primary;
+  }
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+.features__logos {
+  display: inline-flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+.features__logo {
+  display: flex;
+  align-items: center;
+  img {
+    height: 24px;
+    width: auto;
+  }
+  &:not(:last-child) {
+    margin-left: 10px;
+  }
+  &--paz {
+    img {
+      padding-top: 0px;
+    }
+  }
+  &--broadcom {
+    img {
+      height: 13px;
+    }
+  }
+  &--samsung {
+    img {
+      height: 10px;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .features__title {
+    font-size: 46px;
+    line-height: 46px;
+  }
+  .features__list {
+    padding-top: 34px;
+    padding-bottom: 30px;
+
+    padding-left: 63px;
+    padding-right: 63px;
+
+    font-size: 36px;
+    line-height: 38px;
+  }
+  .features__item {
+    padding-right: 40px;
+    &:before {
+      top: 17px;
+      left: calc(100% - 11px);
+
+      width: 11px;
+      height: 11px;
+    }
+  }
+  .features__logo {
+    img {
+      height: 46px;
+    }
+    &--paz {
+      img {
+        padding-top: 6px;
+      }
+    }
+    &--broadcom {
+      img {
+        height: 20px;
+      }
+    }
+    &--samsung {
+      img {
+        height: 16px;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .features {
+    margin-top: 340px;
+    margin-left: -130px;
+  }
+  .features__title {
+    font-size: 33px;
+    line-height: 36px;
+  }
+  .features__list {
+    padding-top: 26px;
+    padding-bottom: 21px;
+    padding-right: 27px;
+
+    font-size: 24px;
+    line-height: 31px;
+  }
+  .features__item {
+    padding-right: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    &:before {
+      top: 14px;
+      left: calc(100% - 11px);
+
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .features__logo {
+    img {
+      height: 35px;
+    }
+    &--broadcom {
+      img {
+        height: 15px;
+      }
+    }
+    &--samsung {
+      img {
+        height: 10px;
+      }
+    }
+  }
+}
+@media (min-width: $big-desktop-width) {
+  .features {
+    width: 890px;
+    margin-top: 381px;
+    margin-left: -138px;
+  }
+  .features__title {
+    font-size: 46px;
+    line-height: 51px;
+    @include bg-triangle(79deg,1.5%,transparent,$bg-transparent-light);
+  }
+  .features__list {
+    padding-top: 26px;
+    padding-bottom: 21px;
+    padding-right: 77px;
+
+    font-size: 27px;
+    line-height: 34px;
+
+    @include bg-triangle(79.5deg,5.3%,transparent,$bg-transparent-dark);
+  }
+}

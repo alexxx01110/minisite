@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl" ng-app="minisite">
 
 <% var data = {
-        title: "First | Page",
-        author: "Alex",
+        title: "Minisite | First Page",
+        author: "Alex Morozov",
         images : {
-            cart: require('./../../img/logo.png')
+            logo: require('./../../img/logo.svg'),
+            logo_paz: require('./../../img/logo-paz.png'),
+            logo_broadcom: require('./../../img/logo-broadcom.png'),
+            logo_samsung: require('./../../img/logo-samsung.png'),
+            logo_agency: require('./../../img/logo-agency.png')
         }
        };
 %>
@@ -13,13 +17,16 @@
 <%= _.template(require('./../includes/head.html'))(data) %>
 
 <body>
-    <%= _.template(require('./../includes/header.html'))(data) %>
+    <div class="page-wrapper">
+        <%= _.template(require('./../includes/header.html'))(data) %>
 
-    <main class="page-main">
+        <main class="page-main">
+            <%= _.template(require('./../includes/features.html'))(data) %>
+            <%= _.template(require('./../includes/callback.html'))(data) %>
+        </main>
+
+    </div>
 
 
-    </main>
-
-    <%= _.template(require('./../includes/footer.html'))(data) %>
 </body>
 </html>

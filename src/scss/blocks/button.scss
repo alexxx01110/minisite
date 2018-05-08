@@ -1,0 +1,26 @@
+.button {
+  margin: 0;
+  padding: 12px 0;
+
+  width: 100%;
+
+  border: none;
+
+  background: none;
+  background-color: $bg-second;
+
+  color: $color-light;
+
+  cursor: pointer;
+
+  transition: background-color .5s;
+
+  &:hover:enabled,
+  &:active:enabled {
+    background-color: transparentize($bg-second, 0.5)
+  }
+  &:disabled {
+    cursor: auto;
+    background-color: transparentize($bg-second, 0.5)
+  }
+}

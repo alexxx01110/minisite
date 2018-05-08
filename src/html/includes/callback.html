@@ -1,0 +1,116 @@
+<section class="callback" ng-style="style()" ng-controller="callbackController" resize>
+    <h2 class="callback__title callback__title--mobile" ng-click="callbackFormToggle()">
+        רוצים לדעת עוד? השאירו פרטים ונחזור אליכם בהקדם
+    </h2>
+    <h2 class="callback__title callback__title--desktop">
+        הישארו פרטים ונחזור אליכם בהקדם:
+    </h2>
+    <div class="callback__wrapper"
+         ng-if="showCallbackForm">
+
+        <div class="callback__submitted"
+             ng-show="formSubmitted">
+            <p>{{ formRespondMsg }}</p>
+            <button class="button" ng-click="closeModal()">טוב</button>
+        </div>
+
+        <form class="callback__form"
+              name="form.callbackForm"
+              ng-submit="submit(user)"
+              novalidate>
+
+            <div class="callback__input-group validation"
+                 ng-class="{'validation--error' : form.callbackForm.name.$invalid && form.callbackForm.name.$dirty}">
+
+                <label for="user-name">שם מלא</label>
+
+                <div class="callback__input validation__input">
+                    <input type="text"
+                           id="user-name"
+                           name="name"
+                           ng-model="user.name"
+                           ng-disabled="formSending"
+                           required>
+                    <p class="validation__error-msg"
+                       ng-show="form.callbackForm.name.$invalid && form.callbackForm.name.$dirty">
+
+                        Please, enter your full name
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="callback__input-group validation"
+                 ng-class="{'validation--error' : form.callbackForm.company.$invalid && form.callbackForm.company.$dirty}">
+
+                <label for="company">חברה</label>
+
+                <div class="callback__input validation__input">
+                    <input type="text"
+                           id="company"
+                           name="company"
+                           ng-model="user.company"
+                           ng-disabled="formSending"
+                           required>
+                    <p class="validation__error-msg"
+                       ng-show="form.callbackForm.company.$invalid && form.callbackForm.company.$dirty">
+
+                        Please, enter company name
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="callback__input-group validation"
+                 ng-class="{'validation--error' : form.callbackForm.phone.$invalid && form.callbackForm.phone.$dirty}">
+
+                <label for="phone">טלפון</label>
+
+                <div class="callback__input validation__input">
+                    <input type="text"
+                           id="phone"
+                           name="phone"
+                           ng-model="user.phone"
+                           ng-disabled="formSending"
+                           phone
+                           required>
+                    <p class="validation__error-msg"
+                       ng-show="form.callbackForm.phone.$error.phone">
+
+                        Please, enter correct phone
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="callback__input-group validation"
+                 ng-class="{'validation--error' : form.callbackForm.email.$invalid && form.callbackForm.email.$dirty}">
+
+                <label for="email">אימייל</label>
+
+                <div class="callback__input validation__input">
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           ng-model="user.email"
+                           ng-disabled="formSending"
+                           required>
+                    <p class="validation__error-msg"
+                       ng-show="form.callbackForm.email.$invalid && form.callbackForm.email.$dirty">
+
+                        Please, enter correct email
+                    </p>
+                </div>
+
+            </div>
+            <p class="callback__description">
+                כל השדות הם שדות חובה
+            </p>
+            <!--<p class="callback__description">{{height}}</p>-->
+            <button class="callback__button button"
+                    type="submit" ng-disabled="form.callbackForm.$invalid || formSending">
+                שלח
+            </button>
+        </form>
+    </div>
+</section>

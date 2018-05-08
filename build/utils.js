@@ -32,7 +32,7 @@ function cssLoaders(options) {
     }
 
     function generateLoaders(loader) {
-        let loaders = [cssLoader, postcssLoader]
+        let loaders = [cssLoader, postcssLoader, resolveUrlLoader]
 
         if (loader) {
             loaders.push({

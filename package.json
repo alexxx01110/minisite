@@ -1,7 +1,7 @@
 {
-  "name": "shopping-form",
+  "name": "minisite",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Alex Morozov minisite project",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shayol/shopping-form.git"
+    "url": ""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Shayol/shopping-form/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/Shayol/shopping-form#readme",
+  "homepage": "",
   "devDependencies": {
     "chalk": "^2.3.2",
     "clean-webpack-plugin": "^0.1.19",
@@ -41,7 +41,11 @@
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "webpack": "^4.4.1",
+    "webpack-cli": "^2.1.2",
     "webpack-dev-server": "^3.1.1",
     "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "angular": "^1.6.9"
   }
 }

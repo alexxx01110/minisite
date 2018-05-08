@@ -1,0 +1,21 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  background-color: $bg-light;
+  background-image: url(../../img/bg.jpg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: $desktop-width) {
+  .page-wrapper {
+    background-color: $bg-light;
+    background-image: url(../../img/bg2.jpg);
+    background-position: 300px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
