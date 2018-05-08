@@ -58,7 +58,7 @@ angular.module('minisite')
                         default:
                             showCallbackForm = scope.showCallbackForm;
                             showCallbackFormOld = scope.showCallbackForm;
-                            if (scope.scrollToCallbackForm) {
+                            if (scope.scrollToCallbackForm && scope.showCallbackForm) {
                                 $window.scrollTo(0, element[0].offsetTop);
                             }
                             return {
