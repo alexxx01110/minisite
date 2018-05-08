@@ -3,7 +3,7 @@ angular.module('minisite')
         $scope.form = {};
         $scope.user = {};
         $scope.showCallbackForm = false;
-        // $scope.showCallbackFormOld = true;
+        $scope.scrollToCallbackForm = true;
         $scope.formSending = false;
         $scope.formSubmitted = false;
         $scope.formRespondMsg = '';

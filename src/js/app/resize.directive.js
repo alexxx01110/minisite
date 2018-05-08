@@ -31,8 +31,10 @@ angular.module('minisite')
                 }
                 if (!showCallbackForm) {
                     scope.showCallbackForm = false;
+                    scope.scrollToCallbackForm = true;
                 } else {
                     scope.showCallbackForm = showCallbackFormOld;
+                    scope.scrollToCallbackForm = false;
                 }
                 scope.style = function () {
                     deltaHeight = $window.document.body.clientHeight - defaultHeight;
@@ -56,7 +58,7 @@ angular.module('minisite')
                         default:
                             showCallbackForm = scope.showCallbackForm;
                             showCallbackFormOld = scope.showCallbackForm;
-                            if (scope.showCallbackForm) {
+                            if (scope.scrollToCallbackForm) {
                                 $window.scrollTo(0, element[0].offsetTop);
                             }
                             return {
