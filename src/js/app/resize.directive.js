@@ -5,18 +5,17 @@ angular.module('minisite')
         link: function (scope, element) {
 
             var defaultHeight = 1080,
-                height = defaultHeight,
-                deltaHeight = 0,
+                height = 0,
                 counter = 0,
                 width = 0,
                 breakPoint0 = 750,
                 breakPoint1 = 1024,
+                breakPoint2 = 1266,
                 showCallbackForm = scope.showCallbackForm,
-                showCallbackFormOld = scope.showCallbackForm,
-                breakPoint2 = 1266;
+                showCallbackFormOld = scope.showCallbackForm;
 
                 // scope.height = $window.document.body.clientHeight;
-
+                // deltaHeight = $window.document.body.clientHeight - defaultHeight;
             function getTanDeg (deg) {
                 var rad = deg * Math.PI/180;
                 return Math.tan(rad);
@@ -37,16 +36,13 @@ angular.module('minisite')
                     scope.scrollToCallbackForm = false;
                 }
                 scope.style = function () {
-                    deltaHeight = $window.document.body.clientHeight - defaultHeight;
-
                     switch (true) {
                         case (width >= breakPoint1 && width < breakPoint2):
-
                             showCallbackForm = true;
                             scope.showCallbackForm = true;
                             return {
                                 'width': (534 + element[0].offsetHeight / (getTanDeg(79.8) + 10.3)) + 'px',
-                                'height': height - 373 + 'px'
+                                'height': height - 374 + 'px'
                             };
                         case (width >= breakPoint2):
                             showCallbackForm = true;
