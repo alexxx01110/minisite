@@ -2,7 +2,7 @@ angular.module('minisite')
     .controller('callbackController', ['$scope', 'sendFormService', function ($scope, sendFormService) {
         $scope.form = {};
         $scope.user = {};
-        $scope.showCallbackForm = true;
+        $scope.showCallbackForm = false;
         // $scope.showCallbackFormOld = true;
         $scope.formSending = false;
         $scope.formSubmitted = false;

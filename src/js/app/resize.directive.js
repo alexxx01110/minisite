@@ -9,7 +9,9 @@ angular.module('minisite')
                 deltaHeight = 0,
                 counter = 0,
                 width = 0,
+                breakPoint0 = 750,
                 breakPoint1 = 1024,
+                showCallbackForm = scope.showCallbackForm,
                 showCallbackFormOld = scope.showCallbackForm,
                 breakPoint2 = 1266;
 
@@ -27,33 +29,33 @@ angular.module('minisite')
                 if ($window.innerHeight > defaultHeight) {
                     height = $window.innerHeight
                 }
-                if (!showCallbackFormOld) {
-                    scope.showCallbackForm = false
-                } else (
-                    scope.showCallbackForm = true
-                );
+                if (!showCallbackForm) {
+                    scope.showCallbackForm = false;
+                } else {
+                    scope.showCallbackForm = showCallbackFormOld;
+                }
                 scope.style = function () {
                     deltaHeight = $window.document.body.clientHeight - defaultHeight;
 
                     switch (true) {
                         case (width >= breakPoint1 && width < breakPoint2):
 
-                            showCallbackFormOld = true;
+                            showCallbackForm = true;
                             scope.showCallbackForm = true;
                             return {
                                 'width': (534 + element[0].offsetHeight / (getTanDeg(79.8) + 10.3)) + 'px',
                                 'height': height - 373 + 'px'
                             };
                         case (width >= breakPoint2):
-                            showCallbackFormOld = true;
+                            showCallbackForm = true;
                             scope.showCallbackForm = true;
                             return {
                                 'width': (617 + (element[0].offsetHeight) / (getTanDeg(79.8) + 10.7)) + 'px',
                                 'height': height - 408 + 'px'
                             };
                         default:
-
-                            showCallbackFormOld = false;
+                            showCallbackForm = scope.showCallbackForm;
+                            showCallbackFormOld = scope.showCallbackForm;
                             if (scope.showCallbackForm) {
                                 $window.scrollTo(0, element[0].offsetTop);
                             }

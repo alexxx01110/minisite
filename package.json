@@ -20,7 +20,7 @@
   "bugs": {
     "url": "git@github.com:alexxx01110/minisite.git"
   },
-  "homepage": "",
+  "homepage": "https://minimal-site.herokuapp.com/",
   "devDependencies": {
     "chalk": "^2.3.2",
     "clean-webpack-plugin": "^0.1.19",
