@@ -4,7 +4,7 @@
   "description": "A Alex Morozov minisite project",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm run build-heroku",
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
     "build": "node build/build.js",
     "build-heroku": "node build/build.heroku.js",
