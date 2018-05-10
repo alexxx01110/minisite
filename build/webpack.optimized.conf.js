@@ -5,7 +5,7 @@ module.exports = merge(prodConf, {
     module: {
         rules: [
             {
-                test: /\.(png|gif|svg)$/,
+                test: /\.(jpg|png|gif|svg)$/,
                 loader: 'image-webpack-loader',
                 // Specify enforce: 'pre' to apply the loader
                 // before url-loader/svg-url-loader

@@ -2,10 +2,24 @@ process.env.NODE_ENV = 'production'
 
 const chalk = require('chalk')
 const webpack = require('webpack')
-const prodConfig = require('./webpack.prod.conf')
+const optimizedConfig = require('./webpack.optimized.conf')
+const herocuConfig = require('./webpack.heroku.conf')
+
+let mainConfig
 
 
-webpack(prodConfig, function (err, stats) {
+switch (process.argv[2]) {
+    case 'prod':
+        mainConfig = optimizedConfig
+        break
+    case 'heroku':
+        mainConfig = herocuConfig
+        break
+    default:
+        mainConfig = optimizedConfig
+}
+
+webpack(mainConfig, function (err, stats) {
 
   if (err) throw err
 
