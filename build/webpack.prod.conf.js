@@ -38,6 +38,9 @@ module.exports = merge(baseConf, {
                     // Remove quotes around the encoded URL –
                     // they’re rarely useful
                     noquotes: true,
+                    iesafe: true,
+                    stripdeclarations:true,
+                    encoding: 'base64'
                 }
             }
         ])
